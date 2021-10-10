@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>factoriel</title>
+        <script>
+    
+        </script>
+    </head>
+
+    <body>
+        Exercice 3:
+        Ecrire une fonction JS qui reçoit un nombre entier et calcule son factoriel.
+        factoriel(nb) = 1*2*3*...*(nb-1)*nb
+        Ecrire un script JS qui demande un entier et appelle la fonction factoriel pour ensuite afficher le résultat
+        <script>
+            function factoriel(nb)
+                {
+                    var fact =1;
+                    for(i=1; i<=nb; i++)
+                    {
+                        fact *=i;
+                    }
+                    return fact;
+                }
+         
+            var nb=parseInt(prompt("Saisir un entier"));
+            alert("Le factoriel est de :" + factoriel(nb));
+
+        </script>
+    </body>
+</html>

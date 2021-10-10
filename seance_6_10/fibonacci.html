@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fibonacci</title>
+    </head>
+
+    <body>
+        Exercice 4: Ecrire une fonction récursive qui permet de calculer le nombre fibonacci avec les données suivants :
+            f(0) = 1
+            f(1) = 1
+            f(n) = f(n-1) + f(n-2)
+        Ecrire un script JS qui permet de saisir deux bornes et affiche tous les fibonacci des nombres compris entre les bornes entières.
+        
+    <script>
+        function finbonacci(nb)
+        {
+            if (nb ==0 || nb ==1)
+               { return 1;}
+            else    
+               {return finbonacci(nb-1) + finbonacci (nb-2);} 
+        }
+
+        var a = parseInt(prompt("borne inférieure"));
+        var b = parseInt(prompt("borne supérieure"));
+        var chaine ="";
+        for (i=a;i<=b;i++)
+        {
+            chaine += "fibonnacci " + i + " = " + finbonacci(i);
+        }
+        alert (chaine);
+    </script>
+    </body>
+</html>

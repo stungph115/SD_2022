@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Diviseurs</title>
+    </head>
+
+    <body>
+        Exercice 1 : Ecrire un scripts JS qui permet de saisir un entier et affiche la liste de ses diviseurs.
+        <script type="text/javascript">
+            var nb;
+            nb=entier=parseInt(prompt("Saisir un entier"));
+            var chaine ="mes diviseur :";
+            for(let i=1;i<=entier;i++)
+            {
+                if (entier%i==0)
+                {
+                 chaine += i + ",";
+                }
+            }
+            alert(chaine);
+        </script>
+    </body>
+</html>

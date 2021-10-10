@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exx</title>
+    </head>
+
+    <body>
+        Exercice 2 : Ecrire un script qui saisie une chaine et verifie si elle est un palindrome
+        Exemple: php, laval
+    <script>
+        var mot ;
+        mot =prompt("veuillez saisir un mot" );
+        var i ;
+        var j = mot.length-1;
+        for (i=0; i<j;i++){
+            if (mot.charAt(i)== mot.charAt(j)){
+                j--;
+                }
+                else break;   
+        }
+
+        if (i==j){
+                    alert("le mot " + mot +" est un palindrome");
+                }
+                else{
+                    alert("le mot n'est pas un palindrome");
+                }
+
+        </script>
+    </body>
+</html>
