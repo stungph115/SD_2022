@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Formulaire</title>
+    </head>
+
+    <body>
+        <h1>Traiter un formulaire</h1>
+        <p>Elaborer un fomulaire avec : nom, prenom, email, age, url, date
+            Ecrire des fonctions JS pour :
+            - Transformer le nom en majuscules dès que le focus quitte l'input  du nom
+            - Transformer le prénom en premiere lettre majuscules/les suivantes en minuscule dès que le focus quitte l'input prénom
+            - Vérifier l'age un entier entre 18 et 100
+            - Vérifier l'email est valide
+            - Vérifier url valide
+            - Vérifier la date valide
+        </p>
+        <script type="text/javascript">
+            function traiterNom() {
+                var nom = document.getElementById("nom").value;
+                 nom = nom.toUpperCase();
+                 document.getElementById("nom").value=nom;
+                console.log(nom);
+                document.getElementById("nom").style.backgroundColor="green";
+            }
+
+            function traiterPrenom(){
+                var prenom = document.getElementById("prenom").value;
+                 prenom = prenom.charAt(0).toUpperCase().concat(prenom.slice(1).toLowerCase());
+                 document.getElementById("prenom").value=prenom;
+                console.log(prenom);
+            }
+
+            function traiterEmail(){
+                var email = document.getElementById("email").value;
+                var cpt1=0, cpt2=0;
+                for (let i=0; i<email.length; i++)
+                {
+                    if(email.charAt(i) == '@') cpt1++;
+                    else if  (email.charAt(i)=='.') cpt2++;
+                }
+                if(cpt1 ==1 && cpt2 >= 1){
+                    document.getElementById("email").style.backgroundColor="green";
+                }else{
+                    document.getElementById("email").style.backgroundColor="red";
+
+                }
+            }
+
+            
+            function traiterAge(){
+                
+            }
+
+            function traiterUrl(){
+                
+            }
+
+            function traiterDate(){
+                
+            }
+        </script>
+        <form method="post">
+            <table>
+                <tr>
+                    <td>Nom</td>
+                    <td><input type="text" name="nom" id="nom" onblur="traiterNom()"> </td>
+                </tr>
+                <tr>
+                    <td>Prénom</td>
+                    <td><input type="text" name="prenom" id="prenom" onblur="traiterPrenom()"> </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="mail" name="email" id="email" onblur="traiterEmail()"> </td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="text" name="age" id="age" onblur="traiterAge()"> </td>
+                </tr>
+                <tr>
+                    <td>Url</td>
+                    <td><input type="text" name="url" id="url" onblur="traiterUrl()"> </td>
+                </tr>
+                <tr>
+                    <td>Data</td>
+                    <td><input type="text" name="date" id="date" onblur="traiterDate()"> </td>
+                </tr>
+                <input type="submit" name="valider">
+
+            </table>
+        </form>
+    </body>
+</html>
