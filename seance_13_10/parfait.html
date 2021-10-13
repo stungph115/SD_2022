@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nombre parfait</title>
+</head>
+<body>
+    <h1>Excercice nombre parfait</h1>
+    <p>Ecrire une fonction qui recoit un entier et renvoie la somme de ses diviseurs sauf lui meme
+    Ecrire une fonction qui recoit deux entiers et renvoie le test de leur egalite
+    Ecrire une procedure qui recoix deux limites et renvoie tous les nombres parfaits compris entre les limites
+    Elaborer un fomrulaire de saisie des deux limites et faites appel à la procédure  avec un évènment 
+    associé au formulaire.
+    </p>
+
+    <script>
+
+        function sommeDiviseurs (nb){
+            var somme=0;
+            for (div=1;div<nb;div++){
+                if (nb%div==0){
+                    somme=somme+div;
+                }return somme;
+            }
+        }
+        
+        function test(a, b){
+            return  (a==b);
+            /* if (a==b) return true; else return false; */
+        }
+
+        function recherche (lim1, lim2) {
+            var chaine="les nombres parfaits sont :";
+            for (nb=lim1; nb<lim2; nb++){
+                if(test(nb, sommeDiviseurs(nb))){
+                    chaine+= nb + ",";
+                }
+            }
+            document.write(chaine);
+        }
+
+        function traiterLimites(){
+            var lim1 = document.getElementById("lim1").value;
+            var lim2 = document.getElementById("lim2").value;
+            recherche(lim1,lim2);
+        }
+
+
+    </script>
+    <form method="post">
+       Limite 1 : <input type="text" id="lim1" name="lim1">
+       Limite 2 : <input type="text" id="lim2" name="lim2">
+       <input type="submit" value="Rechercher" name="recherche">
+
+    </form>
+
+
+</body>
+
+</html>
