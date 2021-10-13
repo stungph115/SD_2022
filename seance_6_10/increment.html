@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>increment</title>
+    </head>
+
+    <body>
+        
+    <script>
+        function finbonacci(nb)
+        {
+            if (nb ==0 || nb ==1)
+               { return 1;}
+            else    
+               {return finbonacci(nb-1) + finbonacci (nb-2);} 
+        }
+
+        var a = parseInt(prompt("borne inférieure"));
+        var b = parseInt(prompt("borne supérieure"));
+        var chaine ="";
+        for (i=a;i<=b;i++)
+        {
+            chaine += "fibonnacci " + i + " = " + finbonacci(i);
+        }
+        alert (chaine);
+    </script>
+    </body>
+</html>
