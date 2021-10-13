@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Nombre parfait</title>
 </head>
 <body>
@@ -12,18 +13,18 @@
     associé au formulaire.
     </p>
 
-    <script>
+    <script type="text/javascript">
 
         function sommeDiviseurs (nb){
             var somme=0;
             for (div=1;div<nb;div++){
                 if (nb%div==0){
                     somme=somme+div;
-                }return somme;
-            }
+                }
+            }return somme;
         }
         
-        function test(a, b){
+        function testEgalite(a, b){
             return  (a==b);
             /* if (a==b) return true; else return false; */
         }
@@ -31,11 +32,12 @@
         function recherche (lim1, lim2) {
             var chaine="les nombres parfaits sont :";
             for (nb=lim1; nb<lim2; nb++){
-                if(test(nb, sommeDiviseurs(nb))){
+                if(testEgalite(nb, sommeDiviseurs(nb))){
                     chaine+= nb + ",";
                 }
             }
             document.write(chaine);
+            console.log(chaine);
         }
 
         function traiterLimites(){
@@ -44,16 +46,13 @@
             recherche(lim1,lim2);
         }
 
-
     </script>
-    <form method="post">
+    <form method="post" onsubmit="traiterLimites()">
        Limite 1 : <input type="text" id="lim1" name="lim1">
        Limite 2 : <input type="text" id="lim2" name="lim2">
        <input type="submit" value="Rechercher" name="recherche">
-
     </form>
-
-
+    
 </body>
 
 </html>
